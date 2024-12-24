@@ -4,11 +4,11 @@ class MyThread extends Thread{
 		super(name);
 		start();
 	}
-        public static void sleep(int milliseconds){
+        public void run(){
 		for(int i=1;i<=5;i++){
 			System.out.println("child Thread "+i);
 			try {
-				testThread.sleep(500);
+				Thread.sleep(500);
 			}
 			catch(InterruptedException e) {
 				System.out.println("Thread interrupted");
@@ -24,7 +24,7 @@ public class testThread {
 		for(int i=1;i<=5;i++) {
 			System.out.println("main Thread "+i);
 			try {
-			testThread.sleep(500);
+			Thread.sleep(500);
 			}
 			catch(InterruptedException e) {
 				System.out.println("Thread interrupted");
